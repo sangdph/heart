@@ -55,7 +55,7 @@
 @keyframes blur {
   0%,
   100% {
-    -webkit-filter: blur(0px);
+    -webkit-filter: blur(1px);
     -moz-filter: blur(0px);
     -o-filter: blur(0px);
     -ms-filter: blur(0px);
@@ -66,9 +66,9 @@
   }
   50% {
     -webkit-filter: blur(4px);
-    -moz-filter: blur(50px);
-    -o-filter: blur(50px);
-    -ms-filter: blur(50px);
+    -moz-filter: blur(40px);
+    -o-filter: blur(40px);
+    -ms-filter: blur(40px);
     background-color: rgb(255, 0, 179);
     /* --width-heart: 280px;
     --height-heart: 230px; */
