@@ -1,0 +1,79 @@
+:root{
+    --width-heart: 280px;
+    --height-heart: 230px;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.main{
+    width: 100%;
+    height: 800px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.heart {
+  position: relative;
+  width: var(--width-heart);
+  height: var(--height-heart);
+}
+.right,
+.left {
+  content: "";
+  width: calc(var(--width-heart)/2);
+  height: var(--height-heart);
+  position: absolute;
+  background: #1e90ff;
+  left: calc(var(--width-heart)/2);
+  top: 0;
+  border-radius: calc(var(--width-heart)/4) calc(var(--width-heart)/4) 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  animation: blur 1s ease-in 0ms infinite;
+  /* animation: example 4s infinite; */
+
+}
+.left {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+@keyframes example {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+
+@keyframes blur {
+  0%,
+  100% {
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    background-color: rgb(255, 0, 0);
+    /* --width-heart: 140px;
+    --height-heart: 115px */
+    scale: 100%;
+  }
+  50% {
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(50px);
+    -o-filter: blur(50px);
+    -ms-filter: blur(50px);
+    background-color: rgb(255, 0, 179);
+    /* --width-heart: 280px;
+    --height-heart: 230px; */
+    scale: 120%;
+  }
+  
+}
+
