@@ -1,0 +1,41 @@
+:root {
+  --width: 140px;
+  --height: 100px;
+}
+
+#mini-hearts {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgb(26, 14, 79);
+  z-index: -1000;
+}
+
+.mini-heart {
+  position: fixed;
+  width: var(--width);
+  height: var(--height);
+}
+
+.mini-heart::before,
+.mini-heart::after {
+  content: "";
+  width: calc(var(--width) / 2);
+  height: 100%;
+  position: absolute;
+  background: #1e90ff;
+  left: calc(var(--width) / 2);
+  top: 0;
+  border-radius: calc(var(--width) / 4) calc(var(--width) / 4) 0px 0px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  animation: blur 0.4s linear 0ms infinite;
+}
+
+.mini-heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
