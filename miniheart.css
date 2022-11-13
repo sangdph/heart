@@ -1,6 +1,10 @@
 :root {
   --width: 140px;
   --height: 100px;
+  --red: 0;
+  --green: 0;
+  --blue: 0;
+  --size: 1;
 }
 
 #mini-hearts {
@@ -15,23 +19,24 @@
 
 .mini-heart {
   position: fixed;
-  width: var(--width);
-  height: var(--height);
+  width: calc(var(--width)/var(--size));
+  height: calc(var(--height)/var(--size));
 }
 
 .mini-heart::before,
 .mini-heart::after {
+  display: block;
   content: "";
-  width: calc(var(--width) / 2);
+  width: calc(var(--width) / 2 /var(--size));
   height: 100%;
   position: absolute;
-  background: #1e90ff;
-  left: calc(var(--width) / 2);
+  left: calc(var(--width) / 2 /var(--size));
   top: 0;
-  border-radius: calc(var(--width) / 4) calc(var(--width) / 4) 0px 0px;
+  border-radius: calc(var(--width) / 4 /var(--size)) calc(var(--width) / 4/var(--size)) 0px 0px;
+  background-color: rgb(var(--red), var(--green), var(--blue));
   transform: rotate(-45deg);
   transform-origin: 0 100%;
-  animation: blur 0.4s linear 0ms infinite;
+  animation: blur-mini 0.4s linear 0ms infinite;
 }
 
 .mini-heart::after {
@@ -39,3 +44,15 @@
   transform: rotate(45deg);
   transform-origin: 100% 100%;
 }
+
+@keyframes blur-mini {
+    0%,
+    100% {
+        -webkit-filter: blur(0.5px);
+      scale: 1;
+    }
+    50% {
+        -webkit-filter: blur(1px);
+      scale: 1.2;
+    }
+  }
