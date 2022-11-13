@@ -1,5 +1,7 @@
 var miniHearts = document.getElementById("mini-hearts");
 var zIndex = -900;
+// music
+const audio = document.getElementById("myAudio");
 
 function createHeart(x,y, zIndex){
     var size = (Math.floor(Math.random() * 300)+100)/100;
@@ -20,6 +22,9 @@ function printMousePos(event) {
     zIndex++;
     console.log(x, y);
     createHeart(x,y, zIndex);
+    //phát nhạc
+    audio.play();
   }
   
   document.addEventListener("click", printMousePos);
+

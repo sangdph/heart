@@ -49,11 +49,14 @@
 @keyframes blur-mini {
     0%,
     100% {
-        -webkit-filter: blur(0.5px);
+      -webkit-filter: blur(0.5px);
       scale: 1;
+      background-color: rgb(var(--red), var(--green), var(--blue));
+
     }
     50% {
-        -webkit-filter: blur(1px);
+      -webkit-filter: blur(1px);
       scale: 1.2;
+      background-color: rgb(212, 50, 220);
     }
   }
